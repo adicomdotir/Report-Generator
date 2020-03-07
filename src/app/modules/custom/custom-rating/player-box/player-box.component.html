@@ -1,0 +1,35 @@
+<div *ngIf="player?.visibility">
+    <div style="height: 15px;">
+        <div class="row">Form</div>
+        <div class="row">{{player?.form}}</div>
+    </div>
+    <div style="height: 15px;">
+        <div class="row">Stamina</div>
+        <div class="row">{{player?.stamina}}</div>
+    </div>
+    <div *ngIf="player?.id == 1" style="height: 15px;">
+        <div class="row">GoalKeeping</div>
+        <div class="row">{{player?.goalkeeping}}</div>
+    </div>
+    <div *ngIf="checkDefendPlayer()" style="height: 15px;">
+        <div class="row">Defending</div>
+        <div class="row">{{player?.defending}}</div>
+    </div>
+    <div *ngIf="player?.id != 1" style="height: 15px;">
+        <div class="row">PlayMaking</div>
+        <div class="row">{{player?.playMaking}}</div>
+    </div>
+    <div *ngIf="checkAttackPlayer()" style="height: 15px;">
+        <div class="row">Scoring</div>
+        <div class="row">{{player?.scoring}}</div>
+    </div>
+    <div style="height: 15px;">
+        <div class="row">Loyalty</div>
+        <div class="row" [ngStyle]="{'color':player?.motherClub === true ? 'red' : 'black' }"
+            [ngStyle]="{'color':player?.motherClub === true ? 'red' : 'black' }" [innerHTML]="getLoyaltyText(player)">
+        </div>
+    </div>
+</div>
+<div *ngIf="!player?.visibility">
+    EMPTY
+</div>

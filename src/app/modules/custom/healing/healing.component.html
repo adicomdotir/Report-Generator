@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <div class="form-group row">
+                <div class="col-3 col-md-3">
+                    <label class="col-form-label">{{ 'HEALING.MEDIC_LEVEL' | translate }}</label>
+                </div>
+                <div class="col-9 col-md-9">
+                    <input class="form-control" [(ngModel)]="mediclevel" name="mediclevel" type="number" min="0"
+                        max="5" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-3 col-md-3">
+                    <label>{{ 'HEALING.AGE' | translate }}</label>
+                </div>
+                <div class="col-9 col-md-9">
+                    <input class="form-control" [(ngModel)]="age" name="age" type="number" min="17" max="38" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-3 col-md-3">
+                    <label>{{ 'HEALING.INJURY_WEEKS' | translate }}</label>
+                </div>
+                <div class="col-9 col-md-9">
+                    <input class="form-control" [(ngModel)]="injuryweeks" name="injuryweeks" type="number" value="0" />
+                </div>
+            </div>
+            <button class="btn btn-primary" type="button"
+                (click)='healingcalc()'>{{ 'HEALING.SUBMIT' | translate }}</button>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th style="text-align: center">{{ 'HEALING.HEALTH_UPDATES' | translate }}</th>
+                    <th style="text-align: center">{{ 'HEALING.WEEKS' | translate }}</th>
+                    <th style="text-align: center">{{ 'HEALING.DAYS' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>{{ 'HEALING.BRUISED' | translate }}</b></td>
+                    <td>{{update_b}}</td>
+                    <td>{{week_b}}</td>
+                    <td>{{day_b}}</td>
+                </tr>
+                <tr>
+                    <td><b>{{ 'HEALING.HEALTHY' | translate }}</b></td>
+                    <td>{{update}}</td>
+                    <td>{{week}}</td>
+                    <td>{{day}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

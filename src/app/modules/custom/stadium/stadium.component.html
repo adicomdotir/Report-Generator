@@ -1,0 +1,117 @@
+<div class="row">
+
+    <div class="col-4 col-md-4">
+
+        <div class="card" style="margin-bottom: 8px;">
+            <div class="card-header">{{ 'STADIUM.accordingtofan' | translate }}</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>{{ 'STADIUM.fansmood' | translate }}</label>
+                    <input class="form-control" [(ngModel)]="fansmood" name="fansmood" type="number" min="0" max="11" />
+                </div>
+
+                <div class="form-group">
+                    <label>{{ 'STADIUM.fansmembers' | translate }}</label>
+                    <input class="form-control" [(ngModel)]="fansmembers" name="fansmembers" type="number">
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="button" (click)='fancalc()'>{{ 'STADIUM.SUBMIT' | translate }}</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">{{ 'STADIUM.accordingtosize' | translate }}</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="arenasize">{{ 'STADIUM.arenasize' | translate }}</label>
+                    <input class="form-control" name="arenasize" type="number" [(ngModel)]="arenasize">
+                </div>
+                <div class="form-group">
+                    <label for="terper">{{ 'STADIUM.terraces' | translate }} (%)</label>
+                    <input class="form-control" name="terper" type="number" [(ngModel)]="terper" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="basper">{{ 'STADIUM.basic' | translate }} (%)</label>
+                    <input class="form-control" name="basper" type="number" [(ngModel)]="basper" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="roofper">{{ 'STADIUM.roof' | translate }} (%)</label>
+                    <input class="form-control" name="roofper" type="number" [(ngModel)]="roofper" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="vipper">{{ 'STADIUM.vip' | translate }} (%)</label>
+                    <input class="form-control" name="vipper" type="number" [(ngModel)]="vipper" min="0" max="100">
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="button" (click)='sizecalc()'>{{ 'STADIUM.SUBMIT' | translate }}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8 col-md-8">
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th style="text-align: center">{{ 'STADIUM.seats' | translate }}</th>
+                    <th style="text-align: center">{{ 'STADIUM.currentarena' | translate }}</th>
+                    <th style="text-align: center">{{ 'STADIUM.seatstoadd' | translate }}</th>
+                    <th style="text-align: center">{{ 'STADIUM.arenasize' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ 'STADIUM.terraces' | translate }}</td>
+                    <td><input class="form-control" name="currentterraces" type="number" [(ngModel)]="currentterraces"></td>
+                    <td>{{terraces - currentterraces}}</td>
+                    <td>{{terraces}}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'STADIUM.basic' | translate }}</td>
+                    <td><input class="form-control" name="currentbasic" type="number" [(ngModel)]="currentbasic"></td>
+                    <td>{{basic - currentbasic}}</td>
+                    <td>{{basic}}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'STADIUM.roof' | translate }}</td>
+                    <td><input class="form-control" name="currentroof" type="number" [(ngModel)]="currentroof"></td>
+                    <td>{{roof - currentroof}}</td>
+                    <td>{{roof}}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'STADIUM.vip' | translate }}</td>
+                    <td><input class="form-control" name="currentvip" type="number" [(ngModel)]="currentvip"></td>
+                    <td>{{vip - currentvip}}</td>
+                    <td>{{vip}}</td>
+                </tr>
+                <tr>
+                    <td><b>{{ 'STADIUM.totalcapacity' | translate }}</b></td>
+                    <td>{{currentterraces+currentbasic+currentroof+currentvip}}</td>
+                    <td>{{(terraces + basic + roof + vip) - (currentterraces+currentbasic+currentroof+currentvip)}}</td>
+                    <td>{{terraces+basic+roof+vip}}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'STADIUM.income' | translate }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{income}}{{ 'STADIUM.sign' | translate }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'STADIUM.weeklycost' | translate }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{{weekly_cost}}{{ 'STADIUM.sign' | translate }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'STADIUM.costofconstruction' | translate }}</td>
+                    <td></td>
+                    <td>{{constructioncost()}}{{ 'STADIUM.sign' | translate }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
