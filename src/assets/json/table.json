@@ -1,0 +1,17 @@
+[{
+  "id": 1,
+  "faName": "جدول یک",
+  "enName": "City"
+}, {
+  "id": 2,
+  "faName": "جدول دو",
+  "enName": "Province"
+}, {
+  "id": 3,
+  "faName": "جدول سه",
+  "enName": "User"
+}, {
+  "id": 4,
+  "faName": "جدول چهار",
+  "enName": "Group"
+}]

@@ -1,0 +1,56 @@
+[{
+  "id": 1,
+  "faFieldName": "کد",
+  "enFieldName": "id",
+  "tableId": 1
+}, {
+  "id": 2,
+  "faFieldName": "عنوان",
+  "enFieldName": "title",
+  "tableId": 1
+}, {
+  "id": 3,
+  "faFieldName": "کد استان",
+  "enFieldName": "provinceId",
+  "tableId": 1
+}, {
+  "id": 4,
+  "faFieldName": "کد",
+  "enFieldName": "id",
+  "tableId": 2
+}, {
+  "id": 5,
+  "faFieldName": "عنوان",
+  "enFieldName": "title",
+  "tableId": 2
+}, {
+  "id": 6,
+  "faFieldName": "کد",
+  "enFieldName": "id",
+  "tableId": 3
+}, {
+  "id": 7,
+  "faFieldName": "عنوان",
+  "enFieldName": "title",
+  "tableId": 3
+}, {
+  "id": 8,
+  "faFieldName": "کد شهر",
+  "enFieldName": "cityId",
+  "tableId": 3
+}, {
+  "id": 9,
+  "faFieldName": "کد گروه",
+  "enFieldName": "groupId",
+  "tableId": 3
+}, {
+  "id": 10,
+  "faFieldName": "کد",
+  "enFieldName": "id",
+  "tableId": 4
+}, {
+  "id": 11,
+  "faFieldName": "عنوان",
+  "enFieldName": "title",
+  "tableId": 4
+}]
