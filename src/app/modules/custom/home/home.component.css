@@ -1,0 +1,14 @@
+.btn {
+    height: 24px;
+    line-height: 24px;  
+    width: 24px;  
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: rgb(137, 175, 76);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 24px;
+  }

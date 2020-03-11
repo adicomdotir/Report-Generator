@@ -10,6 +10,9 @@ import { CustomRoutingModule } from '../modules/custom/custom-routing.module';
         FormsModule,
         CustomRoutingModule
     ],
+    exports: [
+        CommonModule
+    ],
     providers: []
 })
 export class SharedModule { }

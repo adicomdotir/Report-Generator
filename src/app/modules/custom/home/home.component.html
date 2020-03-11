@@ -1,1 +1,11 @@
-<h1>Report Generator</h1>
+<div style="text-align: center;">
+    <div>
+        <h4>
+            جدول خود را انتخاب کنید
+        </h4>
+    </div>
+    <div *ngFor="let tbl of tables">
+        <div style="display: inline-block;">{{tbl.faName}}</div>
+        <div class="btn">+</div>
+    </div>
+</div>
