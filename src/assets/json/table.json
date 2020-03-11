@@ -1,17 +1,17 @@
 [{
   "id": 1,
-  "faName": "جدول یک",
+  "faName": "جدول شهر",
   "enName": "City"
 }, {
   "id": 2,
-  "faName": "جدول دو",
+  "faName": "جدول استان",
   "enName": "Province"
 }, {
   "id": 3,
-  "faName": "جدول سه",
+  "faName": "جدول کاربر",
   "enName": "User"
 }, {
   "id": 4,
-  "faName": "جدول چهار",
+  "faName": "جدول گروه",
   "enName": "Group"
 }]

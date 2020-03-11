@@ -1,10 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CustomRoutingModule } from '../modules/custom/custom-routing.module';
 
 @NgModule({
     declarations: [],
     imports: [
-        BrowserModule
+		CommonModule,
+		FormsModule,
+		CustomRoutingModule
     ],
     providers: []
 })
