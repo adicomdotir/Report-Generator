@@ -5,14 +5,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-	imports: [
-		RouterModule,
-		CommonModule,
-		HttpClientModule
-	],
-	exports: [HeaderComponent],
-	providers: [],
-	declarations: [HeaderComponent]
+    imports: [
+        RouterModule,
+        CommonModule,
+        HttpClientModule
+    ],
+    exports: [HeaderComponent],
+    providers: [],
+    declarations: [HeaderComponent]
 
 })
 export class CoreModule { }

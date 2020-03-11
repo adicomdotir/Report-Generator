@@ -6,9 +6,9 @@ import { CustomRoutingModule } from '../modules/custom/custom-routing.module';
 @NgModule({
     declarations: [],
     imports: [
-		CommonModule,
-		FormsModule,
-		CustomRoutingModule
+        CommonModule,
+        FormsModule,
+        CustomRoutingModule
     ],
     providers: []
 })
