@@ -1,0 +1,74 @@
+.sidenav {
+    /* background-image: -moz-linear-gradient(top, #00838f 0%, #00838f 90%);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+    /* background-image: #00838f 0%, #00838f 90%; */
+    /* Chrome10-25,Safari5.1-6 */
+    /* background-image: linear-gradient(to bottom, #00838f 0%, #00838f 90%); */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00838F', endColorstr='#00838F', GradientType=0); */
+    background: #f5f5f5;
+    color: #4c4d4f;
+    /* background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(249,168,37,1) 100%); */
+    /* background: -webkit-radial-gradient(top right, #f8d353, #ffffff);
+    background: -moz-radial-gradient(top right, #f8d353, #ffffff);
+    background: radial-gradient(to bottom left, #f8d353, #ffffff); */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.component-page-header {
+    display: flex;
+    align-items: center;
+    @media (max-width: $small-breakpoint-width) {
+        padding-left: 0;
+    }
+}
+
+h1 {
+    outline: none;
+    @media (max-width: $small-breakpoint-width) {
+        padding: 24px 8px;
+        font-size: 20px;
+    }
+}
+
+.sidenav-toggle {
+    padding: 0;
+    margin: 8px;
+    min-width: 64px;
+    display: none;
+    @media (max-width: $small-breakpoint-width) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    mat-icon {
+        font-size: 30px;
+        height: 64px;
+        width: 64px;
+        line-height: 64px;
+        color: white;
+    }
+}
+
+.docs-primary-header h1 {
+    font-weight: 300;
+    margin: 0;
+    padding: 28px 8px;
+    font-size: 20px;
+    color: #fff;
+}
+
+app-navbar .docs-navbar,
+app-navbar .docs-navbar-header {
+    background: #006f9d;
+}
+
+.mat-toolbar.mat-primary {
+    /* background: linear-gradient(90deg, #875A7B 20%, #62495B 80%) !important; */
+    background: #006f9d;
+    color: #fff;
+}

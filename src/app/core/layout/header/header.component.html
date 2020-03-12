@@ -1,0 +1,69 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+                <!-- <img class='logo' (click)="toggleSidenav.emit()"> -->
+            <mat-icon (click)="toggleSidenav.emit()">menu</mat-icon>
+        </button>
+
+        <span class="menu-spacer"></span>
+        <span class="menu-spacer"></span>
+
+        <span class="menu-spacer"></span>
+        <span style="margin-right:10px;">
+              گزارش ساز پویا
+        </span>
+
+        <span class="menu-spacer"></span>
+
+        <!-- <div>
+            <a mat-button [routerLink]="'/login'"> ورود </a>
+            <a mat-button [routerLink]="'/register'"> ثبت نام </a>
+        </div> -->
+
+        <span style="flex: 1 1 auto;"></span>
+        <a mat-button routerLink="{{route}}">داشبورد</a>
+
+        <!-- <a mat-button [matMenuTriggerFor]="appMenu">
+            <mat-icon aria-hidden="false" aria-label="برنامه ها">apps</mat-icon>
+        </a> -->
+        <!-- <mat-menu #appMenu="matMenu" aria-hidden="false" style="height: 59px;">
+            <ng-template matMenuContent width="5" role="menu">
+                <button mat-menu-item>
+                    <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                        <div class="o_app_icon paziresh" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                    </a>
+                </button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon paziresh" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon malekiat" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon daneshbonyan" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon fanbazar" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon garardad" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon events" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon base" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon membership" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+                <button mat-menu-item> <a class="o_app o_menuitem" data-menu="86" title="سامانه پذیرش و استقرار" routerLink="./paziresh">
+                    <div class="o_app_icon message" style="border-radius: 50% ;height: 48px;width: 48px"></div>
+                </a></button>
+
+            </ng-template>
+        </mat-menu> -->
+
+
+    </mat-toolbar-row>
+</mat-toolbar>

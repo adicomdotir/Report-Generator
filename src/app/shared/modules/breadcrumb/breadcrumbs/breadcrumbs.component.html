@@ -1,0 +1,20 @@
+<div class="">
+    <ul class="breadcrumb">
+        <li *ngFor="let breadcrumb of breadcrumbs; let last = last">
+            <a [routerLink]="hasParams(breadcrumb)">
+                {{breadcrumb.label}}
+            </a>
+        </li>
+        <li style="display: none;">
+            <a></a>
+        </li>
+    </ul>
+    <!-- <ul class="breadcrumb">
+        <li *ngFor="let breadcrumb of breadcrumbs; let last = last">
+            <a *ngIf="!last" [routerLink]="hasParams(breadcrumb)">
+                {{breadcrumb.label}}
+            </a>
+            <span *ngIf="last">{{ breadcrumb.label }}</span>
+        </li>
+    </ul> -->
+</div>

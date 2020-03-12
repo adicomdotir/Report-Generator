@@ -1,1 +1,20 @@
-<router-outlet></router-outlet>
+<app-header (toggleSidenav)="sidenav.toggle()">
+</app-header>
+<mat-sidenav-container fxFill style="position: fixed" dir="rtl">
+
+    <mat-sidenav #sidenav mode="side" opened style="min-width: 250px;margin-bottom:100px;" class="sidenav">
+        <!-- <img class='titlelogo'> -->
+        <app-side></app-side>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="docs-primary-header component-page-header">
+            <h1 focusOnNavigation></h1>
+        </div>
+        <div style="padding: 16px;margin-top:-80px;margin-bottom: 100px;">
+            <main [@routerTransition]="getState(o)">
+                <router-outlet #o="outlet"></router-outlet>
+            </main>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,91 @@
+.mat-menu-panel {
+    min-width: 90vw !important;
+    max-width: 95vw !important;
+    margin-left: -8px;
+    margin-top: 24px;
+}
+
+@media (min-width: 576px) {
+    button.mat-menu-item {
+        width: 100%;
+        float: left;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up)*/
+
+@media (min-width: 768px) {
+    button.mat-menu-item {
+        width: 50%;
+        float: left;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) {
+    button.mat-menu-item {
+        width: 33.333%;
+        float: left;
+    }
+}
+
+
+/* very large devices (large desktops, 1200px and up)*/
+
+@media (min-width: 1200px) {
+    button.mat-menu-item {
+        width: 31%;
+        float: left;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1550px and up)*/
+
+@media (min-width: 1550px) {
+    button.mat-menu-item {
+        width: 31%;
+        float: left;
+    }
+}
+
+.docs-primary-header h1 {
+    font-weight: 300;
+    margin: 0;
+    padding: 28px 8px;
+    font-size: 20px;
+    color: #fff;
+}
+
+app-navbar .docs-navbar,
+app-navbar .docs-navbar-header {
+    background: #006f9d;
+}
+
+.mat-toolbar.mat-primary {
+    /* background: linear-gradient(90deg, #875A7B 20%, #62495B 80%) !important; */
+    background: #006f9d;
+    color: #fff;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+    z-index: 2;
+}
+
+.logo:hover {
+    -webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
