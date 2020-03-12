@@ -1,0 +1,19 @@
+.mat-list-base .mat-list-item {
+    color: #4c4d4f;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0);
+}
+
+.mat-expansion-panel {
+    background-color: #00000000;
+}
+
+mat-panel-title {
+    color: #4c4d4f;
+}
+
+.menu-accordion>.mat-expansion-indicator::after {
+    color: #4c4d4f;
+}
