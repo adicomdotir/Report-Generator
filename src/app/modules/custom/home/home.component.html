@@ -1,11 +1,21 @@
-<div style="text-align: center;">
-    <div>
-        <h4>
-            جدول خود را انتخاب کنید
-        </h4>
-    </div>
-    <div *ngFor="let tbl of tables">
-        <div style="display: inline-block;">{{tbl.faName}}</div>
-        <div class="btn">+</div>
-    </div>
-</div>
+<mat-card-content>
+    <mat-horizontal-stepper linear #stepper>
+
+        <mat-step [stepControl]="tableSelectorStep">
+            <ng-template matStepLabel>انتخاب جداول </ng-template>
+            <app-table-selector [stepper]=stepper></app-table-selector>
+        </mat-step>
+        <mat-step [stepControl]="relationSelectorStep">
+            <ng-template matStepLabel>ارتباط بین جداول </ng-template>
+            <app-relation-selector [stepper]=stepper></app-relation-selector>
+        </mat-step>
+        <mat-step [stepControl]="fieldSelectorStep">
+            <ng-template matStepLabel>انتخاب فیلد ها</ng-template>
+            <app-field-selector></app-field-selector>
+        </mat-step>
+        <mat-step [stepControl]="conditionStep">
+            <ng-template matStepLabel>افزودن شرط </ng-template>
+            <app-conditions></app-conditions>
+        </mat-step>
+    </mat-horizontal-stepper>
+</mat-card-content>

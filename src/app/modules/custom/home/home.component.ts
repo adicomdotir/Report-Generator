@@ -1,6 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ConditionsComponent } from './../conditions/conditions.component';
+import { RelationSelectorComponent } from '../relation-selector/relation-selector.component';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { TableService } from 'src/app/core/services/table.service';
-import { Table } from 'src/app/shared/models/table';
+import { TableSelectorComponent } from '../table-selector/table-selector.component';
+import { FieldSelectorComponent } from '../field-selector/field-selector.component';
 
 @Component({
     selector: 'app-home',
@@ -8,21 +11,33 @@ import { Table } from 'src/app/shared/models/table';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-    tables: Table[] = [];
+
+    isLinear = false;
+    @ViewChild(TableSelectorComponent, { static: false }) tableSelectorComponent: TableSelectorComponent;
+    @ViewChild(RelationSelectorComponent, { static: false }) relationSelectorComponent: RelationSelectorComponent;
+    @ViewChild(FieldSelectorComponent, { static: false }) fieldSelectorComponent: FieldSelectorComponent;
+    @ViewChild(ConditionsComponent, { static: false }) conditionsComponent: ConditionsComponent;
 
     constructor(private tableService: TableService) { }
 
     ngOnInit() {
-        this.tableService.getTables().subscribe({
-            next: (tables) => {
-                this.tables = tables;
-            },
-            error: (err) => {
-                console.log(err);
-            },
-            complete: () => {}
-        });
     }
 
     ngOnDestroy() { }
+
+    get tableSelectorStep() {
+        return this.tableSelectorComponent ? this.tableSelectorComponent.tableSelectorForm : null;
+    }
+
+    get relationSelectorStep() {
+        return this.relationSelectorComponent ? this.relationSelectorComponent.relationSelectorForm : null;
+    }
+
+    get fieldSelectorStep() {
+        return this.fieldSelectorComponent ? this.fieldSelectorComponent.fieldSelectorForm : null;
+    }
+
+    get conditionStep() {
+        return this.conditionsComponent ? this.conditionsComponent.conditionForm : null;
+    }
 }
