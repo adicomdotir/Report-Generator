@@ -45,8 +45,7 @@
             <ng-container matColumnDef="buttons">
                 <mat-header-cell fxFlex="15%" *matHeaderCellDef></mat-header-cell>
                 <mat-cell fxFlex="15%" *matCellDef="let element">
-                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ?
-                     selection.toggle(element) : null" [checked]="selection.isSelected(element)">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)">
                     </mat-checkbox>
                 </mat-cell>
             </ng-container>

@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
     selector: 'app-table-selector',
@@ -24,7 +25,7 @@ export class TableSelectorComponent implements OnInit, OnDestroy {
     displayedColumns: string[] = ['number', 'id', 'faName', 'enName', 'buttons'];
     selection = new SelectionModel<Table>(true, []);
 
-    constructor(private tableService: TableService) { }
+    constructor(private tableService: TableService, private dataService: DataService) { }
 
     ngOnInit() {
         this.tableService.getTables().subscribe({
@@ -48,7 +49,9 @@ export class TableSelectorComponent implements OnInit, OnDestroy {
     }
 
     nextStep() {
+        this.dataService.complateStepOne(this.selection.selected);
         this.stepper.next();
     }
+
     ngOnDestroy() { }
 }

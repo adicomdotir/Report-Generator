@@ -1,0 +1,45 @@
+<div>
+    <button mat-mini-fab aria-label="Example icon-button with a heart icon">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+<div>
+    <mat-form-field>
+        <mat-label>انتخاب جدول اول</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let table of tables" [value]="table.id">
+                {{table.faName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <ng-container>
+        <mat-form-field>
+            <mat-label>انتخاب فیلد اول</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let table of tables" [value]="table.id">
+                    {{table.faName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ng-container>
+</div>
+<div>
+    <mat-form-field>
+        <mat-label>انتخاب جدول اول</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let table of tables" [value]="table.id">
+                {{table.faName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <ng-container>
+        <mat-form-field>
+            <mat-label>انتخاب فیلد اول</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let table of tables" [value]="table.id">
+                    {{table.faName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ng-container>
+</div>

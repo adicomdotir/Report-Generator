@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     constructor(private tableService: TableService) { }
 
-    ngOnInit() {
-    }
+    ngOnInit() {}
 
     ngOnDestroy() { }
 

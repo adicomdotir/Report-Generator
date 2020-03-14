@@ -3,6 +3,8 @@ import { TableService } from 'src/app/core/services/table.service';
 import { Table } from 'src/app/shared/models/table';
 import { FormGroup } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
+import { DataService } from 'src/app/core/services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-relation-selector',
@@ -11,21 +13,26 @@ import { MatStepper } from '@angular/material/stepper';
 })
 export class RelationSelectorComponent implements OnInit, OnDestroy {
     tables: Table[] = [];
-
-    constructor(private tableService: TableService) { }
     relationSelectorForm: FormGroup;
+    subscriptions: Subscription[] = [];
+    selectTables = [];
     @Input() stepper: MatStepper;
+
+    constructor(private tableService: TableService, private dataService: DataService) { }
+
     ngOnInit() {
-        this.tableService.getTables().subscribe({
+        const sub = this.dataService.stepOneComplate$.subscribe({
             next: (tables) => {
                 this.tables = tables;
             },
             error: (err) => {
                 console.log(err);
-            },
-            complete: () => {}
+            }
         });
+        this.subscriptions.push(sub);
     }
 
-    ngOnDestroy() { }
+    ngOnDestroy() {
+        this.subscriptions.forEach(item => item.unsubscribe());
+    }
 }
