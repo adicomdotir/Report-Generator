@@ -7,11 +7,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { CustomRoutingModule } from './custom-routing.module';
 import { FieldSelectorComponent } from './field-selector/field-selector.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         SharedModule,
-        CustomRoutingModule
+        CustomRoutingModule,
+        FlexLayoutModule,
+        FormsModule
     ],
     declarations: [
         HomeComponent,

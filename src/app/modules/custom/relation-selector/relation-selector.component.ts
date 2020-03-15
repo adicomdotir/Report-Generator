@@ -6,6 +6,24 @@ import { MatStepper } from '@angular/material/stepper';
 import { DataService } from 'src/app/core/services/data.service';
 import { Subscription } from 'rxjs';
 
+class RelationModel {
+    id: number;
+    tableOne: number;
+    tableTwo: number;
+    fieldOne: number;
+    fieldTwo: number;
+    relation: number;
+
+    constructor() {
+        this.id = -1;
+        this.tableOne = -1;
+        this.tableTwo = -1;
+        this.fieldOne = -1;
+        this.fieldTwo = -1;
+        this.relation = -1;
+    }
+}
+
 @Component({
     selector: 'app-relation-selector',
     templateUrl: './relation-selector.component.html',
@@ -15,7 +33,9 @@ export class RelationSelectorComponent implements OnInit, OnDestroy {
     tables: Table[] = [];
     relationSelectorForm: FormGroup;
     subscriptions: Subscription[] = [];
-    selectTables = [];
+    models: RelationModel[] = [];
+    tableOneSelect = -1;
+    tableTwoSelect = -1;
     @Input() stepper: MatStepper;
 
     constructor(private tableService: TableService, private dataService: DataService) { }
@@ -34,5 +54,11 @@ export class RelationSelectorComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.subscriptions.forEach(item => item.unsubscribe());
+    }
+
+    addRelation() {
+        this.models.push(new RelationModel());
+        console.log(this.models);
+        
     }
 }
