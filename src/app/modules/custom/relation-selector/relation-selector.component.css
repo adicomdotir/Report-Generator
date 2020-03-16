@@ -1,3 +1,9 @@
 .center {
   text-align: center;
 }
+
+.fabBtn {
+  position: fixed;
+  left: 32px;
+  bottom: 16px;
+}

@@ -1,75 +1,80 @@
-<div>
+<div class="fabBtn">
     <button mat-mini-fab (click)="addRelation()">
         <mat-icon>add</mat-icon>
     </button>
 </div>
 <ng-container *ngFor="let model of models; let i=index">
-    <div fxLayout="row">
-        <div fxFlex>
-            <div fxLayout="row">
-                <div fxFlex>
-                    <mat-form-field style="text-align: center">
-                        <mat-label>انتخاب جدول اول</mat-label>
-                        <mat-select [(ngModel)]="model.tableOne">
-                            <mat-option *ngFor="let table of tables" [value]="table.id">
-                                {{table.faName}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div fxFlex>
-                    <ng-container *ngIf="model.tableOne != -1">
+    <div style="border: #006f9d 1px solid; padding: 8px; margin-top: 4px;">
+        <div fxLayout="row">
+            <div fxFlex>
+                <div fxLayout="row">
+                    <div fxFlex class="center">
                         <mat-form-field style="text-align: center">
-                            <mat-label>انتخاب فیلد اول</mat-label>
-                            <mat-select>
+                            <mat-label>انتخاب جدول اول</mat-label>
+                            <mat-select [(ngModel)]="model.tableOne" (ngModelChange)="tableChange(1, i)">
                                 <mat-option *ngFor="let table of tables" [value]="table.id">
                                     {{table.faName}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
-                    </ng-container>
+                    </div>
+                    <div fxFlex class="center">
+                        <ng-container *ngIf="model.tableOne != -1">
+                            <mat-form-field style="text-align: center">
+                                <mat-label>انتخاب فیلد اول</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let field of model.fieldsTableOne" [value]="field.id">
+                                        {{field.faFieldName}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div fxFlex>
-            <div fxLayout="row">
-                <div fxFlex>
-                    <mat-form-field style="text-align: center">
-                        <mat-label>انتخاب جدول دوم</mat-label>
-                        <mat-select [(ngModel)]="model.tableTwo">
-                            <mat-option *ngFor="let table of tables" [value]="table.id">
-                                {{table.faName}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div fxFlex>
-                    <ng-container *ngIf="model.tableTwo != -1">
+            <div fxFlex>
+                <div fxLayout="row">
+                    <div fxFlex class="center">
                         <mat-form-field style="text-align: center">
-                            <mat-label>انتخاب فیلد دوم</mat-label>
-                            <mat-select>
+                            <mat-label>انتخاب جدول دوم</mat-label>
+                            <mat-select [(ngModel)]="model.tableTwo" (ngModelChange)="tableChange(2, i)">
                                 <mat-option *ngFor="let table of tables" [value]="table.id">
                                     {{table.faName}}
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
-                    </ng-container>
+                    </div>
+                    <div fxFlex class="center">
+                        <ng-container *ngIf="model.tableTwo != -1">
+                            <mat-form-field style="text-align: center">
+                                <mat-label>انتخاب فیلد دوم</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let field of model.fieldsTableTwo" [value]="field.id">
+                                        {{field.faFieldName}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </ng-container>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div fxLayout="row">
-        <div fxFlex> </div>
-        <div fxFlex *ngIf="model.tableOne != -1 && model.tableTwo != -1">
-            <mat-form-field style="text-align: center">
-                <mat-label>نوع ارتباط</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let table of tables" [value]="table.id">
-                        {{table.faName}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
+        <div fxLayout="row">
+            <div fxFlex> </div>
+            <div fxFlex class="center">
+                <mat-form-field style="text-align: center">
+                    <mat-label>نوع ارتباط</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let relation of relations" [value]="relation.id">
+                            {{relation.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxFlex class="center" style="align-self: center;">
+                <button mat-flat-button color="primary" (click)="deleteRelation(i)">حذف</button>
+            </div>
+            <div fxFlex> </div>
         </div>
-        <div fxFlex> </div>
     </div>
 </ng-container>
