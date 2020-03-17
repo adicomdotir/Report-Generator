@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-toolbar>
+        <button mat-raised-button color="primary" style="float:left" (click)="nextStep()">ادامه</button>
+    </mat-toolbar>
+</mat-card>
+<mat-card>
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="جستجو">
+    </mat-form-field>
+</mat-card>
+
+<mat-card>
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="number">
+                <mat-header-cell fxFlex="15%" *matHeaderCellDef> شماره </mat-header-cell>
+                <mat-cell fxFlex="15%" *matCellDef="let index = index"> {{index + 1}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="id">
+                <mat-header-cell fxFlex="15%" *matHeaderCellDef mat-sort-header> کد </mat-header-cell>
+                <mat-cell fxFlex="15%" *matCellDef="let element"> {{element.id}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="faFieldName">
+                <mat-header-cell fxFlex fxFill *matHeaderCellDef mat-sort-header> نام فارسی </mat-header-cell>
+                <mat-cell fxFlex fxFill *matCellDef="let element"> {{element.faFieldName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="enFieldName">
+                <mat-header-cell fxFlex fxFill *matHeaderCellDef mat-sort-header> نام انگلیسی </mat-header-cell>
+                <mat-cell fxFlex fxFill *matCellDef="let element"> {{element.enFieldName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="tableId">
+                <mat-header-cell fxFlex fxFill *matHeaderCellDef mat-sort-header> کد جدول </mat-header-cell>
+                <mat-cell fxFlex fxFill *matCellDef="let element"> {{element.tableId}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="buttons">
+                <mat-header-cell fxFlex="15%" *matHeaderCellDef></mat-header-cell>
+                <mat-cell fxFlex="15%" *matCellDef="let element">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)">
+                    </mat-checkbox>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns "></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns; "></mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSizeOptions]="[ 10, 20,50,100] " showFirstLastButtons></mat-paginator>
+    </div>
+</mat-card>

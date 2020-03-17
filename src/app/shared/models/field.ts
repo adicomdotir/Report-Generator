@@ -3,4 +3,4 @@ export class Field {
     faFieldName: string;
     enFieldName: string;
     tableId: number;
-} 
+}
